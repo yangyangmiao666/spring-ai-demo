@@ -13,6 +13,14 @@ import reactor.core.publisher.Flux;
 
 import java.util.Map;
 
+/**
+ * Ollama ChatController
+ *
+ * @author YangyangMiao
+ * @email yangyangmiao666@outlook.com
+ * @date 2025/4/19 10:59
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/ollama-demo1")
 public class ChatController1 {
