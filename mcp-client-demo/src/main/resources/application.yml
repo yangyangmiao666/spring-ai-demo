@@ -3,3 +3,29 @@ server:
 spring:
   application:
     name: mcp-client-demo
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen2.5:7b
+    mcp:
+      client:
+        enabled: true
+        name: spring-ai-mcp-client
+        version: 1.0.0
+        request-timeout: 20s
+        type: sync
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
+
+
+#        sse:
+#          connections:
+#            server1:
+#              url: http://localhost:8091
+#            server2:
+#              url: http://localhost:8092
+        toolcallback:
+          enabled: true
+    tool:
+      allowed-directories: /Users/yangyangmiao/Desktop,/Users/yangyangmiao/Downloads,/home/user/Desktop
