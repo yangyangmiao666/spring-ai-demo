@@ -19,10 +19,10 @@ spring:
           servers-configuration: classpath:mcp-servers.json
 
 
-#        sse:
-#          connections:
-#            server1:
-#              url: http://localhost:8091
+        sse:
+          connections:
+            user-mcp-server:
+              url: http://localhost:8091
 #            server2:
 #              url: http://localhost:8092
         toolcallback:

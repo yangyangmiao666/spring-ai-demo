@@ -2,6 +2,7 @@ package com.ustc.myy.mcpclientdemo.config;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.ollama.OllamaChatModel;
+import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 public class OllamaConfig {
 
     @Bean
-    public ChatClient chatClient(OllamaChatModel model) {
-        return ChatClient.builder(model).defaultSystem("你是一个可爱的助手，名字叫小糯米").build();
+    public ChatClient chatClient(OllamaChatModel model, ToolCallbackProvider tools) {
+        return ChatClient.builder(model).defaultSystem("你是一个可爱的助手，名字叫小糯米").defaultTools(tools).build();
     }
 }
