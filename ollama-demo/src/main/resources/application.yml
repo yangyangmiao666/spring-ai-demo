@@ -1,0 +1,10 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: ollama-demo
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen2.5:7b
