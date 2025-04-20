@@ -3,6 +3,7 @@ package com.ustc.myy.mcpclientserverdemo.config;
 import jakarta.annotation.Resource;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
+import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.ollama.OllamaChatModel;
 import org.springframework.ai.tool.ToolCallbackProvider;
@@ -37,7 +38,8 @@ public class ChatClientConfig {
         return ChatClient.builder(ollamaChatModel)
                 .defaultSystem("你是一个可爱的助手，名字叫小糯米")
                 .defaultTools(tools)
-                .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()))
+                .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()),
+                        new SimpleLoggerAdvisor())
                 .build();
     }
 }

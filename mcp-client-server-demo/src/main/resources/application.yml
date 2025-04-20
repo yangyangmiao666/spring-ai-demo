@@ -16,4 +16,8 @@ spring:
 mybatis-flex:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: debug
+    com.ustc.myy.mcpclientserverdemo: debug
 
