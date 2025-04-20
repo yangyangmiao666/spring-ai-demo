@@ -1,6 +1,5 @@
 package com.ustc.myy.mcpclientserverdemo.config;
 
-import jakarta.annotation.Resource;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
@@ -24,7 +23,7 @@ public class ChatClientConfig {
 
     private final OllamaChatModel ollamaChatModel;
 
-    @Resource
+
     private final ToolCallbackProvider tools;
 
     @Autowired
