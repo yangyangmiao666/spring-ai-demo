@@ -1,8 +1,6 @@
 package com.ustc.myy.mcpclientdemo.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.ollama.OllamaChatModel;
-import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/mcp-client-demo1")
 public class ChatController1 {
 
+
     private final ChatClient chatClient;
 //
 //    @Autowired
@@ -29,8 +28,8 @@ public class ChatController1 {
 //    }
 
     @Autowired
-    public ChatController1(OllamaChatModel model, ToolCallbackProvider tools) {
-        this.chatClient = ChatClient.builder(model).defaultSystem("你是一个可爱的助手，名字叫小糯米").defaultTools(tools).build();
+    public ChatController1(ChatClient chatClient) {
+        this.chatClient = chatClient;
 
     }
 

@@ -4,7 +4,7 @@ import com.ustc.myy.mcpserverdemo.entity.User;
 import com.ustc.myy.mcpserverdemo.service.UserService;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
  * @email yangyangmiao666@outlook.com
  * @date 2025/4/19 22:20
  */
-@Service
+@Component
 public class UserMcpServerTools {
 
     private final UserService userService;

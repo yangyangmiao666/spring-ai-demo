@@ -13,5 +13,11 @@ spring:
       server:
         name: user-mcp-server
         version: 1.0.0
-        type: ASYNC
-        sse-message-endpoint: /mcp/messages
+        type: sync
+mybatis-flex:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: debug
+    com.ustc.myy.mcpclientserverdemo: debug

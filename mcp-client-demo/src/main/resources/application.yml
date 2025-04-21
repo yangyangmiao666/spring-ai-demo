@@ -10,22 +10,36 @@ spring:
         model: qwen2.5:7b
     mcp:
       client:
-        enabled: true
-        name: spring-ai-mcp-client
-        version: 1.0.0
-        request-timeout: 20s
-        type: sync
-        stdio:
-          servers-configuration: classpath:mcp-servers.json
-
-
+        toolcallback:
+          enabled: true
         sse:
           connections:
             user-mcp-server:
               url: http://localhost:8091
+        type: sync
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: debug
+    com.ustc.myy.mcpclientserverdemo: debug
+
+#    mcp:
+#      client:
+#        enabled: true
+#        name: spring-ai-mcp-client
+#        version: 1.0.0
+#        request-timeout: 30s
+#        type: sync
+#        stdio:
+#          servers-configuration: classpath:mcp-servers.json
+
+
+#        sse:
+#          connections:
+#            user-mcp-server:
+#              url: http://localhost:8091
 #            server2:
 #              url: http://localhost:8092
-        toolcallback:
-          enabled: true
-    tool:
-      allowed-directories: /Users/yangyangmiao/Desktop,/Users/yangyangmiao/Downloads,/home/user/Desktop
+#        toolcallback:
+#          enabled: true
+#    tool:
+#      allowed-directories: /Users/yangyangmiao/Desktop,/Users/yangyangmiao/Downloads,/home/user/Desktop
