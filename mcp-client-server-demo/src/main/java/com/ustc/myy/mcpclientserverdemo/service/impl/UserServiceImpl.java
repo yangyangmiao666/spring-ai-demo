@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import com.ustc.myy.mcpclientserverdemo.entity.table.UserTableDef.USER;
+import static com.ustc.myy.mcpclientserverdemo.entity.table.UserTableDef.USER;
+
 
 /**
  * 用户服务实现类
