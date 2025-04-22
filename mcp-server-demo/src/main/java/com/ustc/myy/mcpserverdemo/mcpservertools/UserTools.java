@@ -17,12 +17,12 @@ import java.util.List;
  * @date 2025/4/19 22:20
  */
 @Component
-public class UserMcpServerTools {
+public class UserTools {
 
     private final UserService userService;
 
     @Autowired
-    public UserMcpServerTools(UserService userService) {
+    public UserTools(UserService userService) {
         this.userService = userService;
     }
 
