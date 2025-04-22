@@ -26,7 +26,7 @@ public class ChatController2 {
         this.chatClient = chatClient;
     }
 
-    @GetMapping("/ai/generate")
+    @GetMapping(value = "/ai/generate", produces = "text/html;charset=utf-8")
     public String generate(@RequestParam(value = "message", defaultValue = "给我讲一个笑话") String message) {
         return chatClient.prompt().user(message).call().content();
     }

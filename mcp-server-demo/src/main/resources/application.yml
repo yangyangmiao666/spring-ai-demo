@@ -20,4 +20,4 @@ mybatis-flex:
 logging:
   level:
     org.springframework.ai.chat.client.advisor: debug
-    com.ustc.myy.mcpclientserverdemo: debug
+    com.ustc.myy.mcpserverdemo: debug

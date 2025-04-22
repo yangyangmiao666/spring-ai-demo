@@ -32,12 +32,12 @@ public class ChatController1 {
         this.chatModel = chatModel;
     }
 
-    @GetMapping("/ai/generate")
+    @GetMapping(value = "/ai/generate", produces = "text/html;charset=utf-8")
     public Map<String, String> generate(@RequestParam(value = "message", defaultValue = "给我讲一个笑话") String message) {
         return Map.of("generation", this.chatModel.call(message));
     }
 
-    @GetMapping("/ai/generateStream")
+    @GetMapping(value = "/ai/generate-stream")
     public Flux<ChatResponse> generateStream(@RequestParam(value = "message", defaultValue = "给我讲一个笑话") String message) {
         Prompt prompt = new Prompt(new UserMessage(message));
         return this.chatModel.stream(prompt);

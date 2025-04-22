@@ -20,7 +20,7 @@ spring:
 logging:
   level:
     org.springframework.ai.chat.client.advisor: debug
-    com.ustc.myy.mcpclientserverdemo: debug
+    com.ustc.myy.mcpclientdemo: debug
 
 #    mcp:
 #      client:
