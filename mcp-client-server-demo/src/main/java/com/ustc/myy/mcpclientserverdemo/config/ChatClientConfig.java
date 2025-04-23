@@ -5,6 +5,7 @@ import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.memory.InMemoryChatMemory;
 import org.springframework.ai.ollama.OllamaChatModel;
+import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -23,18 +24,33 @@ public class ChatClientConfig {
 
     private final OllamaChatModel ollamaChatModel;
 
+    private final OpenAiChatModel openAiChatModel;
+
 
     private final ToolCallbackProvider tools;
 
     @Autowired
-    public ChatClientConfig(OllamaChatModel ollamaChatModel, ToolCallbackProvider tools) {
+    public ChatClientConfig(OllamaChatModel ollamaChatModel,
+                            OpenAiChatModel openAiChatModel,
+                            ToolCallbackProvider tools) {
         this.ollamaChatModel = ollamaChatModel;
+        this.openAiChatModel = openAiChatModel;
         this.tools = tools;
     }
 
     @Bean
     public ChatClient ollamaChatClient() {
         return ChatClient.builder(ollamaChatModel)
+                .defaultSystem("你是一个可爱的助手，名字叫小糯米")
+                .defaultTools(tools)
+                .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()),
+                        new SimpleLoggerAdvisor())
+                .build();
+    }
+
+        @Bean
+    public ChatClient openAiChatClient() {
+        return ChatClient.builder(openAiChatModel)
                 .defaultSystem("你是一个可爱的助手，名字叫小糯米")
                 .defaultTools(tools)
                 .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()),
