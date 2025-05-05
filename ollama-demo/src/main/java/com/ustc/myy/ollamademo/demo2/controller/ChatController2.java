@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import static org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.CHAT_MEMORY_CONVERSATION_ID_KEY;
+
 /**
  * Ollama ChatController
  *
@@ -27,7 +29,11 @@ public class ChatController2 {
     }
 
     @GetMapping(value = "/ai/generate", produces = "text/html;charset=utf-8")
-    public String generate(@RequestParam(value = "message", defaultValue = "给我讲一个笑话") String message) {
-        return chatClient.prompt().user(message).call().content();
+    public String generate(@RequestParam(value = "message", defaultValue = "给我讲一个笑话") String message, @RequestParam(value = "chatId") String chatId) {
+        return chatClient.prompt()
+                .user(message)
+                .advisors(advisorSpec -> advisorSpec.param(CHAT_MEMORY_CONVERSATION_ID_KEY, chatId))
+                .call()
+                .content();
     }
 }
