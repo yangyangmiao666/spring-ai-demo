@@ -21,16 +21,16 @@ import reactor.core.publisher.Flux;
 @RequestMapping("/mcp-client-server-demo")
 public class ChatController {
 
-    private final ChatClient ollamaChatClient;
+//    private final ChatClient ollamaChatClient;
 
     private final ChatClient openAiChatClient;
 
 
     @Autowired
-    public ChatController(@Qualifier("ollamaChatClient") ChatClient ollamaChatClient,
+    public ChatController(// @Qualifier("ollamaChatClient") ChatClient ollamaChatClient,
                           @Qualifier("openAiChatClient") ChatClient openAiChatClient) {
         this.openAiChatClient = openAiChatClient;
-        this.ollamaChatClient = ollamaChatClient;
+//        this.ollamaChatClient = ollamaChatClient;
     }
 
     @GetMapping("/ai/generate")

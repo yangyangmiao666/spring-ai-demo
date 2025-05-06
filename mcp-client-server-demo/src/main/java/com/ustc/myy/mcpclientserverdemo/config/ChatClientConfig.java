@@ -3,8 +3,9 @@ package com.ustc.myy.mcpclientserverdemo.config;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
-import org.springframework.ai.chat.memory.InMemoryChatMemory;
-import org.springframework.ai.ollama.OllamaChatModel;
+import org.springframework.ai.chat.memory.ChatMemory;
+//import org.springframework.ai.ollama.OllamaChatModel;
+import org.springframework.ai.chat.memory.MessageWindowChatMemory;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ChatClientConfig {
 
-    private final OllamaChatModel ollamaChatModel;
+//    private final OllamaChatModel ollamaChatModel;
 
     private final OpenAiChatModel openAiChatModel;
 
@@ -30,30 +31,36 @@ public class ChatClientConfig {
     private final ToolCallbackProvider tools;
 
     @Autowired
-    public ChatClientConfig(OllamaChatModel ollamaChatModel,
+    public ChatClientConfig(// OllamaChatModel ollamaChatModel,
                             OpenAiChatModel openAiChatModel,
                             ToolCallbackProvider tools) {
-        this.ollamaChatModel = ollamaChatModel;
+//        this.ollamaChatModel = ollamaChatModel;
         this.openAiChatModel = openAiChatModel;
         this.tools = tools;
     }
 
+//    @Bean
+//    public ChatClient ollamaChatClient() {
+//        return ChatClient.builder(ollamaChatModel)
+//                .defaultSystem("你是一个可爱的助手，名字叫小糯米")
+//                .defaultTools(tools)
+//                .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()),
+//                        new SimpleLoggerAdvisor())
+//                .build();
+//    }
+
     @Bean
-    public ChatClient ollamaChatClient() {
-        return ChatClient.builder(ollamaChatModel)
-                .defaultSystem("你是一个可爱的助手，名字叫小糯米")
-                .defaultTools(tools)
-                .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()),
-                        new SimpleLoggerAdvisor())
-                .build();
+    public ChatMemory chatMemory() {
+        return MessageWindowChatMemory.builder().build();
     }
 
-        @Bean
-    public ChatClient openAiChatClient() {
+
+    @Bean
+    public ChatClient openAiChatClient(ChatMemory chatMemory) {
         return ChatClient.builder(openAiChatModel)
                 .defaultSystem("你是一个可爱的助手，名字叫小糯米")
-                .defaultTools(tools)
-                .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()),
+                .defaultToolCallbacks(tools)
+                .defaultAdvisors(new MessageChatMemoryAdvisor(chatMemory),
                         new SimpleLoggerAdvisor())
                 .build();
     }
