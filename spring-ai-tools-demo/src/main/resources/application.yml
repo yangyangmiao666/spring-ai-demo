@@ -1,0 +1,43 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: mcp-client-server-demo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/my_database?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 112427
+  ai:
+    openai:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      api-key: sk-882e9574080f46aba62969e5655b26cf
+      chat:
+        options:
+          model: qwen-plus
+    mcp:
+      client:
+        toolcallback:
+          enabled: true
+        sse:
+          connections:
+            user-mcp-server:
+              url: http://localhost:8091
+        type: sync
+      server:
+        name: user-mcp-server
+        version: 1.0.0
+        type: sync
+
+#    ollama:
+#      base-url: http://localhost:11434
+#      chat:
+#        model: qwen2.5:7b
+mybatis-flex:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: debug
+    com.ustc.myy.mcpclientserverdemo: debug
+

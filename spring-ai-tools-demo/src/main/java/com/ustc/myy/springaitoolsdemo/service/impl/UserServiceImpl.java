@@ -1,0 +1,71 @@
+package com.ustc.myy.springaitoolsdemo.service.impl;
+
+import com.mybatisflex.core.query.QueryWrapper;
+import com.ustc.myy.springaitoolsdemo.entity.User;
+import com.ustc.myy.springaitoolsdemo.mapper.UserMapper;
+import com.ustc.myy.springaitoolsdemo.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+import static com.ustc.myy.springaitoolsdemo.entity.table.UserTableDef.USER;
+
+
+/**
+ * 用户服务实现类
+ *
+ * @author YangyangMiao
+ * @email yangyangmiao666@outlook.com
+ * @date 2025/4/19 22:18
+ * @version 1.0
+ */
+@Service
+public class UserServiceImpl implements UserService {
+
+    private final UserMapper userMapper;
+
+    @Autowired
+    public UserServiceImpl(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
+
+    @Override
+    public User getUserById(Long id) {
+        return userMapper.selectOneById(id);
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        QueryWrapper wrapper = QueryWrapper.create();
+        wrapper.select().where(USER.USERNAME.eq(username));
+        return userMapper.selectOneByQuery(wrapper);
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+        QueryWrapper wrapper = QueryWrapper.create();
+        wrapper.select().where(USER.EMAIL.eq(email));
+        return userMapper.selectOneByQuery(wrapper);
+    }
+
+    @Override
+    public void createUser(User user) {
+        userMapper.insert(user);
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userMapper.update(user);
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+        userMapper.deleteById(id);
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userMapper.selectAll();
+    }
+}

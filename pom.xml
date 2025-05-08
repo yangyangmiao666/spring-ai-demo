@@ -34,7 +34,7 @@
         <module>ollama-demo</module>
         <module>mcp-client-demo</module>
         <module>mcp-server-demo</module>
-        <module>mcp-client-server-demo</module>
+        <module>spring-ai-tools-demo</module>
         <module>rag-demo</module>
     </modules>
     <properties>
