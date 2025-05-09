@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * Ollama配置类
  *
  * @author YangyangMiao
- * @email yangyangmiao666@outlook.com
+ * @email yangyangmiao666@icloud.com
  * @date 2025/4/19 11:01
  * @version 1.0
  */

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  *
  * @author YangyangMiao
  * @version 1.0
- * @email yangyangmiao666@outlook.com
+ * @email yangyangmiao666@icloud.com
  * @date 2025/4/19 18:59
  */
 @Configuration

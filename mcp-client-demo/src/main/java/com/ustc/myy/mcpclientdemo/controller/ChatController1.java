@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * mcp-client-demo1
  *
  * @author YangyangMiao
- * @email yangyangmiao666@outlook.com
+ * @email yangyangmiao666@icloud.com
  * @date 2025/4/19 19:13
  * @version 1.0
  */

@@ -1,20 +1,21 @@
 package com.ustc.myy.springaitoolsdemo.mcpservertools;
 
-import com.ustc.myy.springaitoolsdemo.annotations.McpTool;
-import com.ustc.myy.springaitoolsdemo.entity.User;
-import com.ustc.myy.springaitoolsdemo.service.UserService;
+import java.util.List;
+
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import com.ustc.myy.springaitoolsdemo.annotations.McpTool;
+import com.ustc.myy.springaitoolsdemo.entity.User;
+import com.ustc.myy.springaitoolsdemo.service.UserService;
 
 /**
  * 用户服务mcp-server-tool
  *
  * @author YangyangMiao
  * @version 1.0
- * @email yangyangmiao666@outlook.com
+ * @email yangyangmiao666@icloud.com
  * @date 2025/4/19 22:20
  */
 @Component

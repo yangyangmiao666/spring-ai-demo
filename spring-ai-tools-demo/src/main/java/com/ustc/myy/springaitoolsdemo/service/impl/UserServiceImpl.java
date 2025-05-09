@@ -1,22 +1,22 @@
 package com.ustc.myy.springaitoolsdemo.service.impl;
 
-import com.mybatisflex.core.query.QueryWrapper;
-import com.ustc.myy.springaitoolsdemo.entity.User;
-import com.ustc.myy.springaitoolsdemo.mapper.UserMapper;
-import com.ustc.myy.springaitoolsdemo.service.UserService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
+import com.mybatisflex.core.query.QueryWrapper;
+import com.ustc.myy.springaitoolsdemo.entity.User;
 import static com.ustc.myy.springaitoolsdemo.entity.table.UserTableDef.USER;
+import com.ustc.myy.springaitoolsdemo.mapper.UserMapper;
+import com.ustc.myy.springaitoolsdemo.service.UserService;
 
 
 /**
  * 用户服务实现类
  *
  * @author YangyangMiao
- * @email yangyangmiao666@outlook.com
+ * @email yangyangmiao666@icloud.com
  * @date 2025/4/19 22:18
  * @version 1.0
  */

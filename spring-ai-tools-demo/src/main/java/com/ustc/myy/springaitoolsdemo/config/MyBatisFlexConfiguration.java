@@ -1,16 +1,17 @@
 package com.ustc.myy.springaitoolsdemo.config;
 
-import com.mybatisflex.core.audit.AuditManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
+
+import com.mybatisflex.core.audit.AuditManager;
 
 /**
  * MyBatis-Flex 内置SQL打印-审计
  *
  * @author YangyangMiao
  * @version 1.0
- * @email yangyangmiao666@outlook.com
+ * @email yangyangmiao666@icloud.com
  * @date 2025/4/20 10:40
  */
 @Configuration

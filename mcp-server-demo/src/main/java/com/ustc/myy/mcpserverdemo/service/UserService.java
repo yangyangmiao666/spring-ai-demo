@@ -1,14 +1,14 @@
 package com.ustc.myy.mcpserverdemo.service;
 
-import com.ustc.myy.mcpserverdemo.entity.User;
-
 import java.util.List;
+
+import com.ustc.myy.mcpserverdemo.entity.User;
 
 /**
  * 用户服务接口
  *
  * @author YangyangMiao
- * @email yangyangmiao666@outlook.com
+ * @email yangyangmiao666@icloud.com
  * @date 2025/4/19 22:18
  * @version 1.0
  */

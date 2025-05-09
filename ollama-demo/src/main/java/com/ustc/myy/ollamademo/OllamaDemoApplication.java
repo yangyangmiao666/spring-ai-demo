@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * OllamaDemoApplication启动类
  *
  * @author YangyangMiao
- * @email yangyangmiao666@outlook.com
+ * @email yangyangmiao666@icloud.com
  * @date 2025/4/19 11:02
  * @version 1.0
  */

@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * mcp工具注解
  *
  * @author YangyangMiao
- * @email yangyangmiao666@outlook.com
+ * @email yangyangmiao666@icloud.com
  * @date 2025/4/20 00:12
  * @version 1.0
  */

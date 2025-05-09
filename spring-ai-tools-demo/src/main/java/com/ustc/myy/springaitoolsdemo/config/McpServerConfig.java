@@ -1,7 +1,8 @@
 package com.ustc.myy.springaitoolsdemo.config;
 
-import com.ustc.myy.springaitoolsdemo.annotations.McpTool;
-import io.modelcontextprotocol.client.McpSyncClient;
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.ai.mcp.SyncMcpToolCallbackProvider;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
@@ -12,15 +13,16 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Collection;
-import java.util.List;
+import com.ustc.myy.springaitoolsdemo.annotations.McpTool;
+
+import io.modelcontextprotocol.client.McpSyncClient;
 
 /**
  * mcp-server配置类
  *
  * @author YangyangMiao
  * @version 1.0
- * @email yangyangmiao666@outlook.com
+ * @email yangyangmiao666@icloud.com
  * @date 2025/4/19 22:23
  */
 @Configuration
