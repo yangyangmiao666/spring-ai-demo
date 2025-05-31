@@ -65,7 +65,7 @@ public class ChatClientConfig {
         return ChatClient.builder(openAiChatModel)
                 .defaultSystem("你是一个可爱的助手，名字叫小糯米")
                 .defaultToolCallbacks(mcpTools, userTools)
-                .defaultAdvisors(new MessageChatMemoryAdvisor(chatMemory),
+                .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build(),
                         new SimpleLoggerAdvisor())
                 .build();
     }

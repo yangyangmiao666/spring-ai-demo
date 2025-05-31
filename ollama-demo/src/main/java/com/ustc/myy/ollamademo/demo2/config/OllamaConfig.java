@@ -32,7 +32,7 @@ public class OllamaConfig {
                 defaultSystem("你是一个可爱的助手，名字叫小糯米")
                 .defaultAdvisors(
                         new SimpleLoggerAdvisor(),
-                        new MessageChatMemoryAdvisor(chatMemory)
+                        MessageChatMemoryAdvisor.builder(chatMemory).build()
                 )
                 .build();
     }
