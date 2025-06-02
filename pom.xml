@@ -42,6 +42,9 @@
         <java.version>21</java.version>
         <spring-ai.version>1.0.0</spring-ai.version>
         <netty-resolver-dns-native-macos.version>4.2.0.Final</netty-resolver-dns-native-macos.version>
+        <fastjson2.version>2.0.57</fastjson2.version>
+        <hutool.version>5.8.38</hutool.version>
+        <playwright.version>1.52.0</playwright.version>
     </properties>
 
     <dependencyManagement>
@@ -60,18 +63,36 @@
                 <classifier>osx-aarch_64</classifier>
                 <scope>runtime</scope>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-core</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- Playwright 用于浏览器自动化 -->
+            <dependency>
+                <groupId>com.microsoft.playwright</groupId>
+                <artifactId>playwright</artifactId>
+                <version>${playwright.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-web</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-webflux</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-web</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-webflux</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -132,61 +153,61 @@
         </plugins>
     </build>
 
-<!--    <repositories>-->
-<!--        <repository>-->
-<!--            <name>Central Portal Snapshots</name>-->
-<!--            <id>central-portal-snapshots</id>-->
-<!--            <url>https://central.sonatype.com/repository/maven-snapshots/</url>-->
-<!--            <releases>-->
-<!--                <enabled>false</enabled>-->
-<!--            </releases>-->
-<!--            <snapshots>-->
-<!--                <enabled>true</enabled>-->
-<!--            </snapshots>-->
-<!--        </repository>-->
-<!--        <repository>-->
-<!--            <id>spring-milestones</id>-->
-<!--            <name>Spring Milestones</name>-->
-<!--            <url>https://repo.spring.io/milestone</url>-->
-<!--            <snapshots>-->
-<!--                <enabled>false</enabled>-->
-<!--            </snapshots>-->
-<!--        </repository>-->
-<!--        <repository>-->
-<!--            <id>spring-snapshots</id>-->
-<!--            <name>Spring Snapshots</name>-->
-<!--            <url>https://repo.spring.io/snapshot</url>-->
-<!--            <releases>-->
-<!--                <enabled>false</enabled>-->
-<!--            </releases>-->
-<!--        </repository>-->
-<!--    </repositories>-->
+    <!--    <repositories>-->
+    <!--        <repository>-->
+    <!--            <name>Central Portal Snapshots</name>-->
+    <!--            <id>central-portal-snapshots</id>-->
+    <!--            <url>https://central.sonatype.com/repository/maven-snapshots/</url>-->
+    <!--            <releases>-->
+    <!--                <enabled>false</enabled>-->
+    <!--            </releases>-->
+    <!--            <snapshots>-->
+    <!--                <enabled>true</enabled>-->
+    <!--            </snapshots>-->
+    <!--        </repository>-->
+    <!--        <repository>-->
+    <!--            <id>spring-milestones</id>-->
+    <!--            <name>Spring Milestones</name>-->
+    <!--            <url>https://repo.spring.io/milestone</url>-->
+    <!--            <snapshots>-->
+    <!--                <enabled>false</enabled>-->
+    <!--            </snapshots>-->
+    <!--        </repository>-->
+    <!--        <repository>-->
+    <!--            <id>spring-snapshots</id>-->
+    <!--            <name>Spring Snapshots</name>-->
+    <!--            <url>https://repo.spring.io/snapshot</url>-->
+    <!--            <releases>-->
+    <!--                <enabled>false</enabled>-->
+    <!--            </releases>-->
+    <!--        </repository>-->
+    <!--    </repositories>-->
 
-<!--    <profiles>-->
-<!--        <profile>-->
-<!--            <id>dev</id>-->
-<!--            <properties>-->
-<!--                <package.environment>dev</package.environment>-->
-<!--            </properties>-->
-<!--            &lt;!&ndash; 是否默认 true表示默认&ndash;&gt;-->
-<!--            <activation>-->
-<!--                <activeByDefault>true</activeByDefault>-->
-<!--            </activation>-->
-<!--        </profile>-->
-<!--        <profile>-->
-<!--            &lt;!&ndash; 测试环境 &ndash;&gt;-->
-<!--            <id>test</id>-->
-<!--            <properties>-->
-<!--                <package.environment>test</package.environment>-->
-<!--            </properties>-->
-<!--        </profile>-->
-<!--        <profile>-->
-<!--            &lt;!&ndash; 生产环境 &ndash;&gt;-->
-<!--            <id>prod</id>-->
-<!--            <properties>-->
-<!--                <package.environment>prod</package.environment>-->
-<!--            </properties>-->
-<!--        </profile>-->
-<!--    </profiles>-->
+    <!--    <profiles>-->
+    <!--        <profile>-->
+    <!--            <id>dev</id>-->
+    <!--            <properties>-->
+    <!--                <package.environment>dev</package.environment>-->
+    <!--            </properties>-->
+    <!--            &lt;!&ndash; 是否默认 true表示默认&ndash;&gt;-->
+    <!--            <activation>-->
+    <!--                <activeByDefault>true</activeByDefault>-->
+    <!--            </activation>-->
+    <!--        </profile>-->
+    <!--        <profile>-->
+    <!--            &lt;!&ndash; 测试环境 &ndash;&gt;-->
+    <!--            <id>test</id>-->
+    <!--            <properties>-->
+    <!--                <package.environment>test</package.environment>-->
+    <!--            </properties>-->
+    <!--        </profile>-->
+    <!--        <profile>-->
+    <!--            &lt;!&ndash; 生产环境 &ndash;&gt;-->
+    <!--            <id>prod</id>-->
+    <!--            <properties>-->
+    <!--                <package.environment>prod</package.environment>-->
+    <!--            </properties>-->
+    <!--        </profile>-->
+    <!--    </profiles>-->
 
 </project>
