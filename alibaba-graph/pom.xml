@@ -6,7 +6,6 @@
         <groupId>com.ustc.myy</groupId>
         <artifactId>spring-ai-demo</artifactId>
         <version>1.0.0</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <artifactId>alibaba-graph</artifactId>
     <version>1.0.0</version>
