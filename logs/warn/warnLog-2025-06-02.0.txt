@@ -1,0 +1,2 @@
+2025-06-02 10:55:12:177 [main] WARN  org.hibernate.orm.deprecation(DialectFactoryImpl.java 153) -HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-02 10:55:13:262 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration(JpaBaseConfiguration.java 258) -spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
